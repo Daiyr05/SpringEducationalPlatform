@@ -5,6 +5,8 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.List;
+
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
@@ -31,5 +33,8 @@ public class Author {
             nullable = false
     )
     private int age;
-
+    @ManyToMany(
+            mappedBy = "authorList"
+    )
+    private List<Course> courseList;
 }
