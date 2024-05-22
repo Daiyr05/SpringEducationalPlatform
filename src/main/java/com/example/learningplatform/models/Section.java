@@ -5,6 +5,8 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.List;
+
 @Entity
 @Table
 @Data
@@ -22,4 +24,9 @@ public class Section {
             name = "course_id"
     )
     private Course course;
+
+    @OneToMany(
+            mappedBy = "section"
+    )
+    private List<Lecture> lectureList;
 }
