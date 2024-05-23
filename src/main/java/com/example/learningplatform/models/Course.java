@@ -3,16 +3,17 @@ package com.example.learningplatform.models;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 
 import java.util.List;
-
+@EqualsAndHashCode(callSuper = true)
 @Table
 @Entity
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class Course {
+public class Course extends BaseEntity{
     @Id
     @SequenceGenerator(name = "course_sequence", sequenceName = "course_sequence", allocationSize = 1)
     @GeneratedValue (strategy = GenerationType.SEQUENCE, generator = "course_sequence")

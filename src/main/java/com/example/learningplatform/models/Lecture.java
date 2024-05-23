@@ -3,14 +3,15 @@ package com.example.learningplatform.models;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
-
+@EqualsAndHashCode(callSuper = true)
 @Table
 @Entity
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class Lecture {
+public class Lecture extends BaseEntity{
     @Id
     @SequenceGenerator(
             name = "lecture_sequence",
