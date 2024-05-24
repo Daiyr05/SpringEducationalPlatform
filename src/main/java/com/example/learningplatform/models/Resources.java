@@ -18,6 +18,7 @@ import lombok.experimental.SuperBuilder;
 public class Resources {
     @Id
     @SequenceGenerator(
+
             name = "resource_sequence",
             sequenceName = "resource_sequence",
             allocationSize = 1
