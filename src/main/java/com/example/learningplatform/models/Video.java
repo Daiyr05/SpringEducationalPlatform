@@ -1,9 +1,6 @@
 package com.example.learningplatform.models;
 
-import jakarta.persistence.DiscriminatorColumn;
-import jakarta.persistence.DiscriminatorValue;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -16,8 +13,8 @@ import lombok.experimental.SuperBuilder;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@DiscriminatorValue("V")
 @SuperBuilder
+@PrimaryKeyJoinColumn(name = "video_id")
 public class Video extends Resources{
     private int length;
 }
