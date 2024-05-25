@@ -5,6 +5,8 @@ import com.example.learningplatform.repositories.AuthorRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class AuthorService {
     private final AuthorRepository authorRepository;
@@ -16,5 +18,17 @@ public class AuthorService {
 
     public void createAuthor(Author author) {
         authorRepository.save(author);
+    }
+
+    public List<Author> getAllAuthors(){
+        return authorRepository.findAll();
+    }
+
+    public List<Author> getAllAuthorsStartingWith(String str){
+        return authorRepository.findAllByFirstNameStartingWithIgnoreCase(str);
+    }
+
+    public List<Author> getAuthorsAges(int age) {
+        return authorRepository.selectByNamedQuery(age);
     }
 }

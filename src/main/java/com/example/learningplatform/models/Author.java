@@ -11,6 +11,10 @@ import java.util.List;
 @AllArgsConstructor
 @Entity
 @Builder
+@NamedQuery(
+        name = "Author.selectByNamedQuery",
+        query = "select  a from Author a where a.age>=:age"
+)
 public class Author extends BaseEntity{
     @Id
     @SequenceGenerator(name = "author_sequence", sequenceName = "author_sequence",allocationSize = 1)

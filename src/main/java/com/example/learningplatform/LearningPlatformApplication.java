@@ -2,7 +2,9 @@ package com.example.learningplatform;
 
 import com.example.learningplatform.models.Author;
 import com.example.learningplatform.models.Video;
+import com.example.learningplatform.repositories.AuthorRepository;
 import com.example.learningplatform.repositories.VideoRepository;
+import com.github.javafaker.Faker;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -16,10 +18,19 @@ public class LearningPlatformApplication {
     }
 
     @Bean
-    public CommandLineRunner commandLineRunner (VideoRepository videoRepository){
+    public CommandLineRunner commandLineRunner (AuthorRepository authorRepository){
         return args -> {
-            Video video = (Video) Video.builder().length(10).name("test video").build();
-            videoRepository.save(video);
+//            Faker faker = new Faker();
+//            for (int i = 0; i < 50; i++){
+//                Author author = new Author();
+//                author.setFirstName(faker.name().firstName());
+//                author.setLastName(faker.name().lastName());
+//                author.setEmail("contact"+i+"@gmail.com");
+//                author.setAge(faker.number().numberBetween(19,40));
+//                authorRepository.save(author);
+//            }
+            Author author = new Author();
+            authorRepository.updateAuthor(100,1);
         };
     }
 
