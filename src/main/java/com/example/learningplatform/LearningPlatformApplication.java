@@ -4,11 +4,13 @@ import com.example.learningplatform.models.Author;
 import com.example.learningplatform.models.Video;
 import com.example.learningplatform.repositories.AuthorRepository;
 import com.example.learningplatform.repositories.VideoRepository;
+import com.example.learningplatform.specification.AuthorSpecification;
 import com.github.javafaker.Faker;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
+import org.springframework.data.jpa.domain.Specification;
 
 @SpringBootApplication
 public class LearningPlatformApplication {
@@ -29,8 +31,9 @@ public class LearningPlatformApplication {
 //                author.setAge(faker.number().numberBetween(19,40));
 //                authorRepository.save(author);
 //            }
-            Author author = new Author();
-            authorRepository.updateAuthor(100,1);
+//            Author author = new Author();
+//            authorRepository.updateAuthor(100,1);
+
         };
     }
 

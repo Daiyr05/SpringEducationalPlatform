@@ -37,4 +37,11 @@ public class AuthorController {
     public List<Author> getAuthrosAges(@PathVariable("age") int age){
         return authorService.getAuthorsAges(age);
     }
+
+    @GetMapping("/filter/{age}")
+    public List<Author> getFilteredAuthors(
+            @PathVariable("age")int age
+    ){
+        return authorService.getFilteredAuthors(age);
+    }
 }
